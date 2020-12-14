@@ -1,0 +1,42 @@
+const path = require('path');
+
+module.exports = {
+    entry: path.resolve(__dirname, './src/FrontEnd/index.js'),
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: 'bundle.js',
+    },
+    devServer: {
+        // bonjour: "",
+        // client: "",
+        // compress: "",
+        // dev: true,
+        // firewall: "",
+        // headers: "",
+        historyApiFallback: true,
+        host: '127.0.0.1',
+        hot: true,
+        // http2: "",
+        // https: "",
+        // injectClient: "",
+        // injectHot: "",
+        // liveReload: "",
+        // onAfterSetupMiddleware: "",
+        // onBeforeSetupMiddleware: "",
+        // onListening: "",
+        // open: "",
+        // openPage: "",
+        // overlay: "",
+        port: '8080',
+        proxy: {
+            '/rest': '/',
+            '/graphql': '/',
+        },
+        public: '',
+        // setupExitSignals: "",
+        // static: "",
+        // stdin: "",
+        // transportMode: "",
+        // useLocalIp: "",
+    },
+};
