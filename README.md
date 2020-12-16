@@ -1,5 +1,7 @@
 # webpack5-es-template
 
+项目的目的主要是想用来承载各种新特性和最佳实践以及常识知识的分享
+
 ### fe
 
 ### nodejs

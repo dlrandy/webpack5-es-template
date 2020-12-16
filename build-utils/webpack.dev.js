@@ -1,11 +1,10 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack');
 
 module.exports = {
-    entry: path.resolve(__dirname, './src/FrontEnd/index.js'),
-    output: {
-        path: path.resolve(__dirname, './dist'),
-        filename: 'bundle.js',
-    },
+    mode: 'development',
+    devtool: 'eval-source-map',
     devServer: {
         // bonjour: "",
         // client: "",
@@ -20,7 +19,7 @@ module.exports = {
         // https: "",
         // injectClient: "",
         // injectHot: "",
-        // liveReload: "",
+        liveReload: false,
         // onAfterSetupMiddleware: "",
         // onBeforeSetupMiddleware: "",
         // onListening: "",
@@ -39,4 +38,10 @@ module.exports = {
         // transportMode: "",
         // useLocalIp: "",
     },
+    plugins: [
+        new Dotenv({
+            path: path.resolve(__dirname, '..', './.env.development'),
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+    ],
 };

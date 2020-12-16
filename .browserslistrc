@@ -1,0 +1,10 @@
+[production]
+> 1%
+last 1 version
+
+[development]
+last 1 version
+> 1%
+
+[ssr]
+node 12
